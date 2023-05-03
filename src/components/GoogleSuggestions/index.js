@@ -8,6 +8,7 @@ import './index.css'
 class GoogleSuggestions extends Component {
   state = {
     searchInput: '',
+    reqAlt: 'google logo',
   }
 
   onChangeInput = event => {
@@ -15,11 +16,19 @@ class GoogleSuggestions extends Component {
     this.setState({searchInput: event.target.value})
   }
 
+  displaySearch = value => {
+    console.log(`search Change triggered on id ${value}`)
+    this.setState({searchInput: value})
+    this.setState({reqAlt: value})
+  }
+
   render() {
-    const {searchInput} = this.state
+    const {searchInput, reqAlt} = this.state
     const {suggestionsList} = this.props
 
     console.log(suggestionsList)
+
+    console.log(reqAlt)
 
     const filteredSuggestions = suggestionsList.filter(eachItem =>
       eachItem.suggestion.toLowerCase().includes(searchInput.toLowerCase()),
@@ -44,12 +53,16 @@ class GoogleSuggestions extends Component {
               type="search"
               className="input"
               onChange={this.onChangeInput}
-              placeholder="Search google"
+              placeholder={reqAlt}
             />
           </div>
           <ul>
             {filteredSuggestions.map(eachItem => (
-              <SuggestionItem eachItem={eachItem} key={eachItem.id} />
+              <SuggestionItem
+                eachItem={eachItem}
+                key={eachItem.id}
+                displaySearch={this.displaySearch}
+              />
             ))}
           </ul>
         </div>
