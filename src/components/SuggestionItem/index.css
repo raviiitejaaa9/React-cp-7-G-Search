@@ -1,0 +1,7 @@
+/* Write your CSS here */
+.suggestion {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
