@@ -1,1 +1,43 @@
 /* Write your CSS here */
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.g-image {
+  width: 45%;
+  margin-bottom: 20px;
+  margin-top: 20%;
+}
+
+.card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  padding: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.search-img {
+  width: 30px;
+  height: 30px;
+}
+
+.input {
+  width: 90%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

@@ -11,6 +11,7 @@ const SuggestionItem = props => {
       <img
         src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
         alt="arrow"
+        className="arrow-image"
       />
     </li>
   )

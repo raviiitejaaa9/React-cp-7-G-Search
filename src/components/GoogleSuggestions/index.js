@@ -3,6 +3,8 @@ import {Component} from 'react'
 
 import SuggestionItem from '../SuggestionItem'
 
+import './index.css'
+
 class GoogleSuggestions extends Component {
   state = {
     searchInput: '',
@@ -26,11 +28,24 @@ class GoogleSuggestions extends Component {
 
     return (
       <div className="bg-container">
-        <img className="g-image" alt="google logo" />
+        <img
+          className="g-image"
+          alt="google logo"
+          src="https://assets.ccbp.in/frontend/react-js/google-logo.png"
+        />
         <div className="card">
           <div className="search-container">
-            <img className="search-img" alt="search icon" />
-            <input type="search" className="" onChange={this.onChangeInput} />
+            <img
+              className="search-img"
+              alt="search icon"
+              src="https://assets.ccbp.in/frontend/react-js/google-search-icon.png"
+            />
+            <input
+              type="search"
+              className="input"
+              onChange={this.onChangeInput}
+              placeholder="Search google"
+            />
           </div>
           <ul>
             {filteredSuggestions.map(eachItem => (
